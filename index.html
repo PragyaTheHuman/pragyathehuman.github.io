@@ -3,70 +3,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pragya Goyal</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f9f5f0; /* pastel cream */
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #fdfcfb;
       color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background-color: #a3c4f3; /* soft pastel blue */
-      padding: 2rem 1rem;
+      background: #e4f0e2;
+      padding: 60px 20px;
       text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-bottom: 1px solid #ccc;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
-      color: #222;
+      font-size: 3em;
+      font-weight: 700;
+      color: #333;
     }
 
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background-color: #d8e2dc; /* pastel green */
-      padding: 1rem;
+      background-color: #fff;
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
     }
 
     nav a {
+      margin: 0 20px;
+      color: #3d3d3d;
       text-decoration: none;
-      color: #333;
       font-weight: 500;
     }
 
     main {
-      padding: 2rem;
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     section {
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease;
+    }
+
+    section:hover {
+      transform: translateY(-4px);
     }
 
     section h2 {
       margin-top: 0;
-      color: #4a4e69; /* muted purple */
+      color: #222;
+      font-size: 1.75em;
+      border-left: 5px solid #aac4ba;
+      padding-left: 12px;
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
-      background-color: #ccc;
-      color: #555;
+      padding: 30px;
+      font-size: 0.9em;
+      color: #888;
+      background-color: #f2f2f2;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Pragya Goyal</h1>
   </header>
@@ -82,33 +100,35 @@
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>Hi! I'm Pragya Goyal, a high school student passionate about art, design, and technology. This website is a glimpse into my world of creativity, expression, and innovation.</p>
+      <p>Hi! I'm Pragya Goyal, a high school student with a passion for art, technology, and thoughtful design. I love exploring the intersection of creativity and innovation.</p>
     </section>
 
     <section id="portfolio">
       <h2>Art Portfolio</h2>
-      <p>This section will include my 2D animation work, 3D game design, and digital art pieces.</p>
+      <p>Here you'll find my 2D animations, 3D game designs, and other visual experiments that reflect my growth and curiosity as a creator.</p>
     </section>
 
     <section id="blog">
       <h2>Blog</h2>
-      <p>Reflections, thoughts, and learnings from my artistic and academic journey.</p>
+      <p>I write about my creative process, projects, inspirations, and learnings from both art and technology fields.</p>
     </section>
 
     <section id="resume">
       <h2>Resume</h2>
-      <p>A snapshot of my academic background, projects, and achievements.</p>
+      <p>My academic background, creative work, and accomplishments in a concise, downloadable format — coming soon.</p>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: pragya@example.com</p>
+      <p>GitHub: <a href="https://github.com/PragyaTheHuman" target="_blank">PragyaTheHuman</a></p>
       <p>LinkedIn: linkedin.com/in/pragyagoyal</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Pragya Goyal. All rights reserved.</p>
+    &copy; 2025 Pragya Goyal &nbsp;|&nbsp; All rights reserved.
   </footer>
+
 </body>
 </html>
