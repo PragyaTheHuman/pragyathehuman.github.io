@@ -1,120 +1,114 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pragya Goyal</title>
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fdfdfd;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f5f0; /* pastel cream */
       color: #333;
     }
+
     header {
-      background-color: #fff;
-      padding: 20px 40px;
-      border-bottom: 1px solid #eee;
+      background-color: #a3c4f3; /* soft pastel blue */
+      padding: 2rem 1rem;
       text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #222;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: #d8e2dc; /* pastel green */
+      padding: 1rem;
+    }
+
     nav a {
-      margin: 0 15px;
       text-decoration: none;
-      color: #444;
-      font-weight: bold;
+      color: #333;
+      font-weight: 500;
     }
+
+    main {
+      padding: 2rem;
+    }
+
     section {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    h1, h2 {
-      font-weight: 600;
-      margin-bottom: 20px;
+
+    section h2 {
+      margin-top: 0;
+      color: #4a4e69; /* muted purple */
     }
-    .project, .post, .paper {
-      margin-bottom: 30px;
-    }
+
     footer {
       text-align: center;
-      padding: 20px;
-      border-top: 1px solid #eee;
-      color: #888;
-    }
-    .section-title {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
+      padding: 1rem;
+      background-color: #ccc;
+      color: #555;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Pragya Goyal</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#art">Art</a>
-      <a href="#animation">2D Animation</a>
-      <a href="#game">3D Game</a>
-      <a href="#blog">Blog</a>
-      <a href="#research">Research</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p>Hello! I'm a high school student passionate about art, design, animation, and game development. I also enjoy writing and researching new ideas at the intersection of creativity and technology.</p>
-  </section>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#blog">Blog</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <section id="art">
-    <h2 class="section-title">Art Portfolio</h2>
-    <div class="project">
-      <h3>Project Title</h3>
-      <p>Description of the art project, tools used, and the inspiration behind it.</p>
-    </div>
-  </section>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hi! I'm Pragya Goyal, a high school student passionate about art, design, and technology. This website is a glimpse into my world of creativity, expression, and innovation.</p>
+    </section>
 
-  <section id="animation">
-    <h2 class="section-title">2D Animation Work</h2>
-    <div class="project">
-      <h3>Animation Title</h3>
-      <p>Brief description of the animation, tools used (e.g., Krita, Toon Boom), and purpose.</p>
-    </div>
-  </section>
+    <section id="portfolio">
+      <h2>Art Portfolio</h2>
+      <p>This section will include my 2D animation work, 3D game design, and digital art pieces.</p>
+    </section>
 
-  <section id="game">
-    <h2 class="section-title">3D Game Development</h2>
-    <div class="project">
-      <h3>Game Title</h3>
-      <p>Description of the game concept, software used (e.g., Unity, Unreal), and any playable demo links.</p>
-    </div>
-  </section>
+    <section id="blog">
+      <h2>Blog</h2>
+      <p>Reflections, thoughts, and learnings from my artistic and academic journey.</p>
+    </section>
 
-  <section id="blog">
-    <h2 class="section-title">Blog</h2>
-    <div class="post">
-      <h3>Post Title</h3>
-      <p>Excerpt of the blog post or a link to the full post.</p>
-    </div>
-  </section>
+    <section id="resume">
+      <h2>Resume</h2>
+      <p>A snapshot of my academic background, projects, and achievements.</p>
+    </section>
 
-  <section id="research">
-    <h2 class="section-title">Research Papers</h2>
-    <div class="paper">
-      <h3>Paper Title</h3>
-      <p>Short abstract and link to download/view PDF.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">Contact Me</h2>
-    <p>Email: yourname@example.com</p>
-    <p>LinkedIn / GitHub / Instagram: [Add your links here]</p>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: pragya@example.com</p>
+      <p>LinkedIn: linkedin.com/in/pragyagoyal</p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
+    <p>&copy; 2025 Pragya Goyal. All rights reserved.</p>
   </footer>
 </body>
 </html>
