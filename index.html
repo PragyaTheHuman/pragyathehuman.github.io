@@ -13,7 +13,10 @@
             <div class="logo">Your Name</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#work">Work</a></li>
+                <li><a href="#art">Art Portfolio</a></li>
+                <li><a href="#animation">2D Animation</a></li>
+                <li><a href="#game">3D Game</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="burger">
@@ -28,63 +31,104 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Hello, I'm <span>Your Name</span></h1>
-                <p>Your profession or short tagline</p>
-                <a href="#work" class="btn">View My Work</a>
+                <p>Artist | Animator | Game Developer | Researcher</p>
+                <a href="#about" class="btn">Explore My Work</a>
             </div>
         </section>
 
-        <section id="about" class="about">
+        <section id="about" class="section">
             <div class="container">
                 <h2>About Me</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>I'm a multidisciplinary creative professional specializing in digital art, animation, game development, and research. With a passion for visual storytelling and technical innovation, I bridge the gap between art and technology.</p>
+                        <p>My work explores the intersection of traditional artistic techniques with cutting-edge digital tools, creating immersive experiences that engage and inspire audiences.</p>
                     </div>
-                    <div class="about-image">
-                        <img src="images/profile.jpg" alt="Your Name">
+                    <div class="profile-image-container">
+                        <img src="images/profile.jpg" alt="Your Name" class="profile-image">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="work" class="work">
+        <section id="art" class="section bg-light">
             <div class="container">
-                <h2>My Work</h2>
-                <div class="projects">
-                    <div class="project">
-                        <img src="images/project1.jpg" alt="Project 1">
-                        <div class="project-info">
-                            <h3>Project Title 1</h3>
-                            <p>Project description goes here. Briefly explain what this project is about.</p>
-                            <a href="#" class="btn">View Project</a>
+                <h2>Art Portfolio</h2>
+                <div class="gallery">
+                    <div class="artwork">
+                        <img src="images/art1.jpg" alt="Artwork 1">
+                        <div class="artwork-info">
+                            <h3>Artwork Title 1</h3>
+                            <p>Medium: Digital Painting</p>
+                            <p>Year: 2023</p>
                         </div>
                     </div>
-                    <div class="project">
-                        <img src="images/project2.jpg" alt="Project 2">
-                        <div class="project-info">
-                            <h3>Project Title 2</h3>
-                            <p>Project description goes here. Briefly explain what this project is about.</p>
-                            <a href="#" class="btn">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <img src="images/project3.jpg" alt="Project 3">
-                        <div class="project-info">
-                            <h3>Project Title 3</h3>
-                            <p>Project description goes here. Briefly explain what this project is about.</p>
-                            <a href="#" class="btn">View Project</a>
+                    <div class="artwork">
+                        <img src="images/art2.jpg" alt="Artwork 2">
+                        <div class="artwork-info">
+                            <h3>Artwork Title 2</h3>
+                            <p>Medium: Mixed Media</p>
+                            <p>Year: 2023</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="animation" class="section">
             <div class="container">
-                <h2>Get In Touch</h2>
-                <p>Feel free to reach out for collaborations or just a friendly hello</p>
-                <form>
+                <h2>2D Animation</h2>
+                <div class="animation-container">
+                    <div class="animation">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="animation-info">
+                            <h3>Animation Title</h3>
+                            <p>Software: Adobe Animate, After Effects</p>
+                            <p>Duration: 2:30</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="game" class="section bg-light">
+            <div class="container">
+                <h2>3D Game Projects</h2>
+                <div class="game-container">
+                    <div class="game">
+                        <img src="images/game1.jpg" alt="Game Screenshot 1">
+                        <div class="game-info">
+                            <h3>Game Title</h3>
+                            <p>Engine: Unity</p>
+                            <p>Role: Game Designer, 3D Artist</p>
+                            <a href="#" class="btn">Play Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section">
+            <div class="container">
+                <h2>Research</h2>
+                <div class="research-container">
+                    <div class="research-paper">
+                        <h3>Research Paper Title</h3>
+                        <p>Published in: Journal Name, 2023</p>
+                        <p>Abstract: Brief description of your research focus and findings...</p>
+                        <a href="#" class="btn">Read Paper</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section bg-light">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p>Feel free to reach out for collaborations or inquiries</p>
+                <form class="contact-form">
                     <input type="text" placeholder="Your Name" required>
                     <input type="email" placeholder="Your Email" required>
                     <textarea placeholder="Your Message" required></textarea>
@@ -93,8 +137,8 @@
                 <div class="social-links">
                     <a href="#"><i class="fab fa-github"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-artstation"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </section>

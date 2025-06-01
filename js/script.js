@@ -1,3 +1,5 @@
+// Updated JavaScript with smooth scrolling for new sections
+
 // Mobile Navigation
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
@@ -43,10 +45,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Update Copyright Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Add animation to project cards on scroll
-const projects = document.querySelectorAll('.project');
+// Animation on Scroll for Sections
+const sections = document.querySelectorAll('.section');
 
-const observer = new IntersectionObserver((entries) => {
+const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = 1;
@@ -55,9 +57,9 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-projects.forEach(project => {
-    project.style.opacity = 0;
-    project.style.transform = 'translateY(20px)';
-    project.style.transition = 'all 0.5s ease';
-    observer.observe(project);
+sections.forEach(section => {
+    section.style.opacity = 0;
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'all 0.5s ease';
+    sectionObserver.observe(section);
 });
