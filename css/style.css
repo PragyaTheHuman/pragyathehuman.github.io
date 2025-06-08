@@ -202,8 +202,8 @@ nav {
     min-width: 300px;
 }
 
-.about h1 span {
-    color: var(--accent-color);
+.name-highlight {
+  color: var(--accent-color);
 }
 
 .skills {
