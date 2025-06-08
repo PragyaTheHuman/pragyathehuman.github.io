@@ -585,3 +585,8 @@ footer p {
 .animation-info {
   padding: 1.5rem;
 }
+
+/* Reduced top padding for all sections except About */
+.section:not(#about) {
+    padding-top: 4rem;
+}
