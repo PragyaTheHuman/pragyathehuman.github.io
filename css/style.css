@@ -102,6 +102,10 @@ a:hover {
     box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
 }
 
+.btn i {
+    margin-right: 0.5rem;
+}
+
 /* Header & Navigation */
 header {
     position: fixed;
@@ -184,10 +188,13 @@ nav {
     position: relative;
 }
 
+.section:not(#about) {
+    padding-top: 4rem;
+}
+
 .bg-light {
     background-color: var(--light-color);
 }
-
 
 /* About Section */
 .about-content {
@@ -203,7 +210,7 @@ nav {
 }
 
 .name-highlight {
-  color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .skills {
@@ -227,16 +234,16 @@ nav {
 }
 
 .profile-image-container {
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 8px solid var(--accent-color);
-  box-shadow: 0 20px 40px rgba(108, 92, 231, 0.2);
-  flex-shrink: 0;
-  margin-top: -150px; 
-  position: relative; 
-  top: -80px; 
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid var(--accent-color);
+    box-shadow: 0 20px 40px rgba(108, 92, 231, 0.2);
+    flex-shrink: 0;
+    margin-top: -150px;
+    position: relative;
+    top: -80px;
 }
 
 .profile-image {
@@ -276,10 +283,88 @@ nav {
     padding: 2rem;
 }
 
-/* Video Embed */
-.animation-container {
+/* Research Section */
+.research-container {
     max-width: 900px;
     margin: 0 auto;
+}
+
+.research-paper {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 3rem;
+}
+
+/* Mobile App Section */
+.mobile-app-container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.mobile-app-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.mobile-app-screenshots {
+    flex: 1;
+}
+
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.screenshot-grid img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.screenshot-grid img:hover {
+    transform: scale(1.03);
+}
+
+.app-features ul {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.app-features li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    color: var(--secondary-color);
+}
+
+.app-features i {
+    color: var(--accent-color);
+    margin-right: 0.8rem;
+    font-size: 1.1rem;
+}
+
+/* Animation Grid */
+.animation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+}
+
+.animation {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.animation:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
 .video-wrapper {
@@ -300,24 +385,7 @@ nav {
 }
 
 .animation-info {
-    background: white;
-    border-radius: 0 0 15px 15px;
-    margin-top: -5px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-/* Research Section */
-.research-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.research-paper {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    padding: 3rem;
-    text-align: center;
+    padding: 1.5rem;
 }
 
 /* Contact Section */
@@ -434,6 +502,17 @@ footer p {
     }
 }
 
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Responsive Design */
 @media screen and (max-width: 992px) {
     .about-content {
@@ -452,6 +531,14 @@ footer p {
     
     h2 {
         font-size: 2.2rem;
+    }
+    
+    .mobile-app-container {
+        flex-direction: column;
+    }
+    
+    .screenshot-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -495,10 +582,6 @@ footer p {
         padding: 5rem 0;
     }
     
-    .hero {
-        min-height: 700px;
-    }
-    
     h1 {
         font-size: 2.5rem;
     }
@@ -509,6 +592,16 @@ footer p {
     
     .gallery {
         grid-template-columns: 1fr;
+    }
+    
+    .animation-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .screenshot-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
     }
     
     .scroll-top {
@@ -532,61 +625,4 @@ footer p {
 
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Animation Classes */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-
-/* Animation Grid Section */
-.animation-grid { 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 2rem;
-}
-
-.animation {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.animation:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-}
-
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.animation-info {
-  padding: 1.5rem;
-}
-
-/* Reduced top padding for all sections except About */
-.section:not(#about) {
-    padding-top: 4rem;
 }
