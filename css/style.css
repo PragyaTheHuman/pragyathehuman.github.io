@@ -395,6 +395,40 @@ nav {
     padding: 1.5rem;
 }
 
+/* 3D Game Section */
+.game-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-content {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.game-video {
+    flex: 1;
+    min-width: 0;
+}
+
+.game-video h3 {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--primary-color);
+}
+
+.game-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.game-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
 /* Contact Section */
 .contact-form {
     max-width: 600px;
@@ -614,6 +648,19 @@ footer p {
     
     .blogs .artwork {
         flex: 1 1 100%;
+    }
+    
+    .game-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .game-video, .game-info {
+        width: 100%;
+    }
+    
+    .game-info {
+        padding-top: 0;
     }
     
     .screenshot-grid {
