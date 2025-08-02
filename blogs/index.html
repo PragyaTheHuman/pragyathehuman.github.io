@@ -4,17 +4,19 @@
   <meta charset="UTF-8" />
   <title>Blogs | Pragya</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
   <style>
-    body {
+    .blogs-page {
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
-      padding-top: 80px;
+      padding-top: 100px;
     }
+    
     nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 2rem;
+      justify-content: space-between;
+      padding: 1rem 2rem;
       position: fixed;
       top: 0;
       width: 100%;
@@ -22,177 +24,283 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       z-index: 1000;
     }
-    .logo a {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #2d3436;
-    }
-    .nav-links {
-      display: flex;
-      list-style: none;
-    }
-    .nav-links li {
+    
+    .logo {
       margin-left: 2rem;
     }
-    .nav-links a {
-      color: #6c5ce7;
+    
+    .home-icon {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .home-icon:hover {
+      color: var(--accent-color);
+      transform: scale(1.1);
+    }
+    
+    .blogs-nav {
+      display: flex;
+      gap: 1rem;
+      background: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .blogs-nav a {
+      color: var(--primary-color);
       font-weight: 600;
+      font-size: 1rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
       text-decoration: none;
     }
+    
+    .blogs-nav a:hover {
+      background: rgba(108, 92, 231, 0.1);
+      color: var(--accent-color);
+    }
+    
+    .blogs-nav a.active {
+      background: var(--accent-color);
+      color: white;
+    }
+    
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 20px;
     }
-    h2 {
-      margin-top: 4rem;
-      font-size: 2rem;
-      color: #2d3436;
+    
+    h2[id] {
+      scroll-margin-top: 100px;
+      margin-top: 2rem;
+      font-size: 2.8rem;
+      color: var(--primary-color);
+      position: relative;
+      display: inline-block;
     }
+    
+    h2[id]::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
+    
     .blog-post {
       margin-bottom: 2rem;
-      padding: 1rem;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
+      padding: 2rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
     }
+    
+    .blog-post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+    
     .blog-post h3 {
-      font-size: 1.3rem;
-      color: #6c5ce7;
+      font-size: 1.5rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
     }
-    .blog-text {
-      max-height: 4.5em;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
+    
+    .blog-post p {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
     }
-    .blog-text.expanded {
-      max-height: 1000px;
-    }
-    .read-more {
+    
+    .btn {
       display: inline-block;
-      margin-top: 0.5rem;
-      color: #6c5ce7;
-      font-weight: 500;
+      background: var(--accent-color);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
       cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1rem;
+      text-decoration: none;
+    }
+    
+    .btn:hover {
+      background: #5649d6;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    
+    @media (max-width: 768px) {
+      .blogs-page {
+        padding-top: 90px;
+      }
+      
+      h2[id] {
+        font-size: 2.2rem;
+      }
+      
+      .blogs-nav {
+        padding: 0.5rem 1rem;
+      }
+      
+      .blogs-nav a {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      h2[id] {
+        font-size: 2rem;
+      }
+      
+      .blogs-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 15px;
+        padding: 0.75rem;
+      }
+      
+      .blogs-nav a {
+        padding: 0.5rem 0.75rem;
+      }
     }
   </style>
 </head>
-<body>
+<body class="blogs-page">
   <header>
     <nav>
       <div class="logo">
-        <a href="../index.html">← Back to Main Site</a>
+        <a href="../index.html" aria-label="Home">
+          <i class="fas fa-home home-icon"></i>
+        </a>
       </div>
-      <ul class="nav-links">
-        <li><a href="#maths">Maths</a></li>
-        <li><a href="#fl">Financial Literacy</a></li>
-      </ul>
+      <div class="blogs-nav">
+        <a href="#maths">Maths</a>
+        <a href="#fl">Financial Literacy</a>
+      </div>
     </nav>
   </header>
 
-  <div class="container">
-    <section id="maths">
-      <h2>Maths</h2>
+  <main class="section">
+    <div class="container">
+      <section id="maths">
+        <h2>Maths</h2>
 
+        <div class="blog-post">
+          <h3>Why Numbers Lie: Floating Point Errors and How to Tame Them</h3>
+          <p>In numerical computation, precision is both a goal and a challenge. Due to the finite nature of digital systems, real numbers are represented using floating point arithmetic, a format that inherently introduces approximation and rounding errors. This article delves into the foundations of error analysis—from the role of machine epsilon and the dangers of catastrophic cancellation to strategies like pairwise summation and partial pivoting in Gaussian elimination. Through clear examples and practical techniques, we explore how seemingly minor computational errors can accumulate, and how careful algorithm design can significantly enhance numerical stability and accuracy.</p>
+          <a href="../blogs/maths/error.pdf" target="_blank" class="btn">Read Full Blog</a> 
+        </div>
 
-      <div class="blog-post">
-        <h3>Why Numbers Lie: Floating Point Errors and How to Tame Them</h3>
-	<p>In numerical computation, precision is both a goal and a challenge. Due to the finite nature of digital systems, real numbers are represented using floating point arithmetic, a format that inherently introduces approximation and rounding errors. This article delves into the foundations of error analysis—from the role of machine epsilon and the dangers of catastrophic cancellation to strategies like pairwise summation and partial pivoting in Gaussian elimination. Through clear examples and practical techniques, we explore how seemingly minor computational errors can accumulate, and how careful algorithm design can significantly enhance numerical stability and accuracy.
-</p>
-	<a href="../blogs/maths/error.pdf" target="_blank" class="btn">Read Full Blog</a> 
-      </div>
+        <div class="blog-post">
+          <h3>Math Meets Melody: Patterns, Iterations & Recursions in Indian Classical Arts</h3>
+          <p>This blog unpacks the mathematical foundations underlying classical Indian poetry and music. Beginning with the decomposition of syllables into Guru and Laghu (long and short), it introduces Prastāra, the recursive generation of metrical patterns. Sankhyā explains enumeration using binary logic, while Naṣṭa and Uddiṣṭa handle forward and reverse mappings between patterns and row numbers—anticipating modern ranking algorithms.
+          The journey continues with Mātrā Vṛtta, where the focus shifts from syllable types to syllable durations, giving rise to patterns governed by the Fibonacci (Virahāṅka) sequence. Finally, Tāla Prastāra extends these concepts to rhythm, using units of time and introducing a recursive formula to enumerate rhythmic compositions.
+          Together, these structures demonstrate how poetry, rhythm, and mathematics are deeply intertwined in India's intellectual heritage—offering insights still relevant in modern computational thinking.</p>
+          <a href="../blogs/maths/pattern.pdf" target="_blank" class="btn">Read Full Blog</a> 
+        </div>
 
+        <div class="blog-post">
+          <h3>Geometry in Daily Life</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer gravida, est nec tempus vulputate, 
+          ligula purus tincidunt ligula, nec varius justo felis et nisi. Donec mattis tempor orci non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer gravida, est nec tempus vulputate, 
+          ligula purus tincidunt ligula, nec varius justo felis et nisi. Donec mattis tempor orci non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer gravida, est nec tempus vulputate, 
+          ligula purus tincidunt ligula, nec varius justo felis et nisi. Donec mattis tempor orci non.</p>
+          <a href="#" class="btn">Read Full Blog</a>
+        </div>
+      </section>
 
-      <div class="blog-post">
-        <h3>Math Meets Melody: Patterns, Iterations & Recursions in Indian Classical Arts</h3>
-	<p>This blog unpacks the mathematical foundations underlying classical Indian poetry and music. Beginning with the decomposition of syllables into Guru and Laghu (long and short), it introduces Prastāra, the recursive generation of metrical patterns. Sankhyā explains enumeration using binary logic, while Naṣṭa and Uddiṣṭa handle forward and reverse mappings between patterns and row numbers—anticipating modern ranking algorithms.
-The journey continues with Mātrā Vṛtta, where the focus shifts from syllable types to syllable durations, giving rise to patterns governed by the Fibonacci (Virahāṅka) sequence. Finally, Tāla Prastāra extends these concepts to rhythm, using units of time and introducing a recursive formula to enumerate rhythmic compositions.
-Together, these structures demonstrate how poetry, rhythm, and mathematics are deeply intertwined in India’s intellectual heritage—offering insights still relevant in modern computational thinking.
-</p>
-	<a href="../blogs/maths/pattern.pdf" target="_blank" class="btn">Read Full Blog</a> 
-      </div>
+      <section id="fl">
+        <h2>Finance and Economics</h2>
 
+        <div class="blog-post">
+          <h3>A simple lemonade stand can teach you everything you need to know about money</h3>
+          <p>In school, we learn how to solve algebra problems, recite historical dates, and balance chemical equations. But we're rarely taught how to manage money—how to grow it, invest it, or even understand the basic principles behind a business.
+          This gap in financial education leaves many people unprepared to make wise decisions about spending, saving, and investing. But money isn't a mystery reserved for bankers and stockbrokers. With just a few foundational concepts, anyone can take control of their financial future.
+          This article uses the story of a humble lemonade stand to explain money, business ownership, profit, depreciation, and valuation—in plain, everyday language.</p>
+          <a href="../blogs/fl/lemonade.pdf" target="_blank" class="btn">Read Full Blog</a> 
+        </div>
 
-	<div class="blog-post">
-  	<h3>Geometry in Daily Life</h3>
-  	<p class="blog-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer gravida, est nec tempus vulputate, 
-    ligula purus tincidunt ligula, nec varius justo felis et nisi. Donec mattis tempor orci non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer gravida, est nec tempus vulputate, 
-    ligula purus tincidunt ligula, nec varius justo felis et nisi. Donec mattis tempor orci non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer gravida, est nec tempus vulputate, 
-    ligula purus tincidunt ligula, nec varius justo felis et nisi. Donec mattis tempor orci non.
-  	</p>
-  	<span class="read-more">Read More...</span>
-	</div>
-    </section>
+        <div class="blog-post">
+          <h3>The Fundamentals of Investing</h3>
+          <p>Investing may feel overwhelming at first, but once you understand a few basic ideas, it becomes much simpler—and even exciting. This article breaks down key concepts so you can make confident, informed money decisions.</p>
+          <a href="../blogs/fl/investing.pdf" target="_blank" class="btn">Read Full Blog</a> 
+        </div>
 
+        <div class="blog-post">
+          <h3>Inflation - A silent killer of wealth</h3>
+          <p>When we think about threats to our finances, we often imagine market crashes, job loss, or bad investments. But one of the most insidious and underestimated dangers is inflation — the silent killer of wealth. Inflation is like rust — it slowly eats away at your financial strength if left unchecked.</p>
+          <a href="../blogs/fl/inflation.pdf" target="_blank" class="btn">Read Full Blog</a> 
+        </div>
 
-    <section id="fl">
-      <h2>Finance and Economics</h2>
+        <div class="blog-post">
+          <h3>Financial Literacy</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer gravida, est nec tempus vulputate, 
+          ligula purus tincidunt ligula, nec varius justo felis et nisi. Donec mattis tempor orci non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer gravida, est nec tempus vulputate, 
+          ligula purus tincidunt ligula, nec varius justo felis et nisi. Donec mattis tempor orci non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer gravida, est nec tempus vulputate, 
+          ligula purus tincidunt ligula, nec varius justo felis et nisi. Donec mattis tempor orci non.</p>
+          <a href="#" class="btn">Read Full Blog</a>
+        </div>
+      </section>
+    </div>
+  </main>
 
-
-      <div class="blog-post">
-        <h3>A simple lemonade stand can teach you everything you need to know about money</h3>
-	<p>In school, we learn how to solve algebra problems, recite historical dates, and balance chemical equations. But we’re rarely taught how to manage money—how to grow it, invest it, or even understand the basic principles behind a business.
-This gap in financial education leaves many people unprepared to make wise decisions about spending, saving, and investing. But money isn’t a mystery reserved for bankers and stockbrokers. With just a few foundational concepts, anyone can take control of their financial future.
-This article uses the story of a humble lemonade stand to explain money, business ownership, profit, depreciation, and valuation—in plain, everyday language. 
-</p>
-	<a href="../blogs/fl/lemonade.pdf" target="_blank" class="btn">Read Full Blog</a> 
-      </div>
-
-
-      <div class="blog-post">
-        <h3>The Fundamentals of Investing</h3>
-	<p>Investing may feel overwhelming at first, but once you understand a few basic ideas, it becomes much simpler—and even exciting. This article breaks down key concepts so you can make confident, informed money decisions.
-</p>
-	<a href="../blogs/fl/investing.pdf" target="_blank" class="btn">Read Full Blog</a> 
-      </div>
-
-      <div class="blog-post">
-        <h3>Inflation - A silent killer of wealth</h3>
-	<p>When we think about threats to our finances, we often imagine market crashes, job loss, or bad investments. But one of the most insidious and underestimated dangers is inflation — the silent killer of wealth. Inflation is like rust — it slowly eats away at your financial strength if left unchecked. 
-</p>
-	<a href="../blogs/fl/inflation.pdf" target="_blank" class="btn">Read Full Blog</a> 
-      </div>
-
-
-
-	<div class="blog-post">
-  	<h3>Financial Literacy</h3>
-  	<p class="blog-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer gravida, est nec tempus vulputate, 
-    ligula purus tincidunt ligula, nec varius justo felis et nisi. Donec mattis tempor orci non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer gravida, est nec tempus vulputate, 
-    ligula purus tincidunt ligula, nec varius justo felis et nisi. Donec mattis tempor orci non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer gravida, est nec tempus vulputate, 
-    ligula purus tincidunt ligula, nec varius justo felis et nisi. Donec mattis tempor orci non.
-  	</p>
-  	<span class="read-more">Read More...</span>
-	</div>
-
-    </section>
-  </div>
+  <footer>
+    <p>© <span id="year"></span> Pragya. All rights reserved.</p>
+  </footer>
 
   <script>
-    document.querySelectorAll('.read-more').forEach(link => {
-      link.addEventListener('click', () => {
-        const text = link.previousElementSibling;
-        text.classList.toggle('expanded');
-        link.textContent = text.classList.contains('expanded') ? 'Read Less...' : 'Read More...';
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.blogs-nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({ top: targetElement.offsetTop - 100, behavior: 'smooth' });
+        }
+        document.querySelectorAll('.blogs-nav a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
       });
     });
 
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.blog-text[data-file]').forEach(blogText => {
-        const filePath = blogText.getAttribute('data-file');
-        fetch(filePath)
-          .then(response => {
-            if (!response.ok) throw new Error("File not found");
-            return response.text();
-          })
-          .then(text => {
-            blogText.innerHTML = '<p>' + text + '</p>';
-          })
-          .catch(err => {
-            blogText.innerHTML = '<p>Could not load content.</p>';
-          });
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('h2[id]');
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= (sectionTop - 150)) {
+          current = section.getAttribute('id');
+        }
+      });
+      document.querySelectorAll('.blogs-nav a').forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === `#${current}`) {
+          a.classList.add('active');
+        }
       });
     });
   </script>
