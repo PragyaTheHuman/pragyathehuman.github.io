@@ -403,13 +403,15 @@ nav {
 
 .game-content {
     display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
     gap: 3rem;
     align-items: flex-start;
 }
 
 .game-video {
-    flex: 1;
+    flex: 1 1 45%; /* More precise control over flex behavior */
     min-width: 0;
+    max-width: 100%; /* Prevent overflow */
 }
 
 .game-video h3 {
@@ -419,8 +421,9 @@ nav {
 }
 
 .game-info {
-    flex: 1;
+    flex: 1 1 45%; /* More precise control over flex behavior */
     min-width: 300px;
+    max-width: 100%; /* Prevent overflow */
 }
 
 .game-info h3 {
@@ -657,6 +660,7 @@ footer p {
     
     .game-video, .game-info {
         width: 100%;
+	flex: none;
     }
     
     .game-info {
