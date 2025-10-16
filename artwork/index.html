@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Artwork Showcase | Pragya</title>
+  <link href="../css/style.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    .artwork-page {
+      padding-top: 100px;
+    }
+
+    .artwork-container {
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin: 3rem 0 5rem;
+    }
+
+    .artwork-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .artwork-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .artwork-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .artwork-card:hover .artwork-image img {
+      transform: scale(1.02);
+    }
+
+    .artwork-info {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .artwork-info h3 {
+      color: var(--accent-color);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .artwork-info p {
+      margin-bottom: 1.25rem;
+      color: var(--secondary-color);
+      flex: 1;
+    }
+
+    .section-header {
+      margin: 4rem 0 2rem;
+      text-align: center;
+    }
+
+    .section-header:first-of-type {
+      margin-top: -2rem;
+    }
+
+    h2[id] {
+       scroll-margin-top: 120px;
+    }
+
+    .section-header h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      margin-left: 2rem;
+    }
+
+    .home-icon {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      transition: transform 0.3s ease;
+    }
+
+    .home-icon:hover {
+      color: var(--accent-color);
+      transform: scale(1.1);
+    }
+
+    .artwork-nav {
+      display: flex;
+      gap: 1rem;
+      background: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .artwork-nav a {
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .artwork-nav a:hover {
+      background: rgba(108, 92, 231, 0.1);
+      color: var(--accent-color);
+    }
+
+    .artwork-nav a.active {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 1200px) {
+      .gallery {
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .artwork-page {
+        padding-top: 90px;
+      }
+
+      .artwork-nav {
+        padding: 0.5rem 1rem;
+      }
+
+      .artwork-nav a {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .artwork-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 15px;
+        padding: 0.75rem;
+      }
+
+      .artwork-nav a {
+        padding: 0.5rem 0.75rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body class="artwork-page">
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="../index.html" aria-label="Home">
+          <i class="fas fa-home home-icon"></i>
+        </a>
+      </div>
+      <div class="artwork-nav">
+        <a href="#mental-health">Mental Health</a>
+        <a href="#departure">Departure</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="section">
+    <div class="artwork-container">
+      <div class="section-header">
+        <h2 id="mental-health">Mental Health</h2>
+      </div>
+      <div class="gallery">
+        <!-- Each artwork card for Mental Health -->
+        
+	<div class="artwork-card"><div class="artwork-image"><img src="../images/mh1.jpg" alt="Unseen Wounds artwork"></div><div class="artwork-info">
+		<h3>Unseen Wounds</h3>
+		<p>In this artwork, a female figure's face is forcibly stretched into a smile by unseen hands, even as her tear-filled eyes and pained expression reveal the truth beneath. This contrast between a forced exterior and internal suffering captures the core of my theme: the emotional burden of hiding mental illness behind a mask of composure.</p>
+            	<p>Surrounding her are distorted versions of herself—expressing grief, numbness, fear—each a reflection of internal chaos. Above, large weeping eyes symbolize silent vulnerability. Below, a smaller figure tears open her own back, revealing a bloodied skeleton—an unflinching representation of inner pain. A cloaked, grim reaper-like figure grips her tightly, evoking the weight of depression, trauma, or oppressive expectations pulling her away from herself.</p>
+	</div>
+	</div>
+        
+	<div class="artwork-card"><div class="artwork-image"><img src="../images/mh2.jpg" alt="Tangled Thoughts artwork"></div><div class="artwork-info">
+		<h3>Tangled Thoughts</h3>
+		<p>In this artwork, a female figure's face is forcibly stretched into a smile by unseen hands, even as her tear-filled eyes and pained expression reveal the truth beneath. This contrast between a forced exterior and internal suffering captures the core of my theme: the emotional burden of hiding mental illness behind a mask of composure.</p>
+            	<p>This work explores the mental chaos often experienced in anxiety, overthinking, or emotional breakdown. Both figures are consumed by a storm of scribbled lines—visual metaphors for racing thoughts, confusion, and inner turmoil. The first image represents emotional suppression—how one may appear composed while battling mental clutter beneath the surface. The second figure is clawing at their own face, as if trying to pull themselves out of their own mind. This figure symbolises the desperate desire to escape overwhelming thoughts that feel inescapable.</p>
+        </div>
+	</div>
+        
+	<div class="artwork-card"><div class="artwork-image"><img src="../images/mh3.jpg" alt="Pulled in All Directions artwork"></div><div class="artwork-info">
+		<h3>Pulled in All Directions</h3>
+		<p>This artwork explores the emotional strain of pretending to be fine while feeling internally torn. The central face, calm and composed, is stretched outward into two opposing expressions—one sorrowful, the other numb—representing the conflict between what we show and what we suppress.</p>
+            	<p>The stretched skin symbolizes how mental pressure distorts identity and forces individuals to wear a mask. Through this piece, I aimed to reflect the silent exhaustion of holding yourself together while emotions pull you apart.</p>
+
+	</div>
+	</div>
+        
+	<div class="artwork-card"><div class="artwork-image"><img src="../images/mh4.jpg" alt="Fake it artwork"></div><div class="artwork-info">
+		<h3>Fake it</h3>
+		<p>This piece highlights the pressure to hide emotional pain behind a forced or a fake smile—creating a disturbing illusion of happiness. The dark eyeholes and exaggerated grin reflect how masking true emotions can feel hollow and isolating. Through this work, I aimed to show how society often expects people to look happy, even when they're struggling inside.</p>
+	</div>
+	</div>
+        
+	<div class="artwork-card"><div class="artwork-image"><img src="../images/mh5.jpg" alt="Stitched Together artwork"></div><div class="artwork-info">
+		<h3>Stitching Together</h3>
+		<p>This piece portrays the emotional pain of healing—slow, raw, and self-inflicted. The figure sews up a long wound down her back, symbolizing how people often mend themselves in silence. Through this work, I aimed to show that recovery from trauma is not neat or painless—it's a lonely, ongoing effort, often hidden from the world.</p>
+	</div>
+	</div>
+        
+	<div class="artwork-card"><div class="artwork-image"><img src="../images/mh6.jpg" alt="The Mask I Wear artwork"></div><div class="artwork-info">
+		<h3>The Mask I Wear</h3>
+		<p>This drawing shows a figure peeling off a smiling face, revealing a tired, emotionless expression beneath. The contrast between the colorful outer mask and the grayscale face beneath highlights the disconnect between how we appear and how we truly feel. I explored the theme of emotional masking—how people often hide their pain behind a smile to meet expectations or avoid judgment.</p>
+	</div>
+	</div>
+        
+	<div class="artwork-card"><div class="artwork-image"><img src="../images/mh7.jpg" alt="Dissolving artwork"></div><div class="artwork-info">
+		<h3>Dissolving</h3>
+		<p>This artwork portrays a face partly melting into the surface, with a fading smile. It symbolizes the feeling of losing oneself—emotionally overwhelmed, slipping into numbness or identity confusion. I wanted to express how mental health struggles can make us feel like we're slowly disappearing, even when we're still physically present.</p>
+	</div>
+	</div>
+        
+	<div class="artwork-card"><div class="artwork-image"><img src="../images/mh8.jpg" alt="Embracing the End artwork"></div><div class="artwork-info">
+		<h3>Embracing the End</h3>
+		<p>This piece depicts a figure collapsed into the arms of a grim reaper, who gently cradles them while holding a raised scythe. It symbolises the darkest moments of mental illness—when despair feels overpowering and death seems like a comforting escape rather than a fear. I wanted to represent the dangerous pull of suicidal thoughts and the silent battles many face when hope feels out of reach.</p>
+	</div>
+	</div>
+        
+	<div class="artwork-card"><div class="artwork-image"><img src="../images/mh9.jpg" alt="Trapped Inside artwork"></div><div class="artwork-info">
+		<h3>Trapped Inside</h3>
+		<p>This piece reflects the emotional and psychological imprisonment caused by mental illness. The upper figure—half skull, half puzzle-faced—symbolizes the disintegration of identity and the complexity of hidden struggles. The lower figure is silenced and strangled by shadowy hands, her eyes filled with pain and resignation. The colorful neural splashes in the background contrast with the grayscale figures, representing the chaos within the mind. Through this work, I aimed to portray how mental illness can strip away voice, identity, and life, while appearing invisible to the outside world.</p>
+	</div>
+	</div>
+      </div>
+
+      <div class="section-header">
+        <h2 id="departure">Departure</h2>
+      </div>
+      <div class="gallery">
+        <!-- Each artwork card for Departure -->
+        <div class="artwork-card"><div class="artwork-image"><img src="../images/dep1.jpg" alt="Departure Artwork 1"></div><div class="artwork-info">
+		<h3>At the Crossroads of a Beginning</h3>
+		<p>This piece symbolizes a personal and emotional journey through the landscape of growth and self-discovery. The central path winds through vibrant, surreal fields — each representing different emotions, memories, and possibilities. At the heart of the journey is the looming presence of a grayscale portrait, reflecting the internal, reflective self — distant, observant, yet deeply rooted in the environment. The figure holding a map stands at a crossroads, uncertain but curious, emphasizing themes of choice, transition, and identity. The birds overhead signify freedom, direction, and the passage of time, while the contrast between the hypercolored world and the grayscale head alludes to the tension between internal doubt and external vibrancy.</p>
+	</div>
+	</div>
+
+        <div class="artwork-card"><div class="artwork-image"><img src="../images/dep2.jpg" alt="Departure Artwork 2"></div><div class="artwork-info">
+		<h3>Emotional Baggage Left Behind</h3>
+		<p>This monochrome drawing explores the quiet but powerful moment just before departure — not just from a place, but from a past self. The lone suitcase on the platform symbolizes the emotional baggage we carry, and the train in the distance represents the journey of self-discovery that lies ahead. A part of growth is learning to leave things behind — old fears, expectations, or pain — to make room for something new. The emptiness of the platform emphasizes solitude and introspection, while the precise perspective draws the viewer forward, inviting them to imagine what comes next once the weight is set down.</p>
+	</div>
+	</div>
+
+        <div class="artwork-card"><div class="artwork-image"><img src="../images/dep3.jpg" alt="Departure Artwork 3"></div><div class="artwork-info">
+		<h3>Alone on the Road Ahead</h3>
+		<p>This piece reflects the quiet, introspective nature of personal journeys. The lone car on an open road symbolizes the individual’s path through life, where moments of departure often mark the beginning of transformation. The fog that envelops the horizon represents the uncertainty of the future — unclear, shifting, and unpredictable. There are no clear signposts or companions in sight, underscoring the truth that some journeys must be taken alone. Yet within this solitude lies strength, possibility, and the courage to keep moving forward despite not knowing what lies ahead.</p>
+	</div>
+	</div>
+
+        <div class="artwork-card"><div class="artwork-image"><img src="../images/dep4.jpg" alt="Departure Artwork 4"></div><div class="artwork-info">
+		<h3>The Road That Forgets to End</h3>
+		<p>Inspired by David Hockney’s expressive landscape "The Road to York through Sledmere", this piece explores the theme of departure as a vibrant, almost surreal journey. The winding road acts as a metaphor for the path of life — full of unexpected turns, emotional terrain, and shifting perspectives. The bold, exaggerated curves of the road reflect the uncertainty of what lies ahead, while the expansive view emphasizes the feeling of moving forward alone. Hockney’s signature use of color transforms the landscape into a psychological space, reminding us that every departure is both a physical and emotional transition, shaped as much by our inner world as the road itself.</p>
+	</div>
+	</div>
+
+        <div class="artwork-card"><div class="artwork-image"><img src="../images/dep5.jpg" alt="Departure Artwork 5"></div><div class="artwork-info">
+		<h3>At Dawn, We Let Go</h3>
+		<p>As the first light stretches across the sky, a flock of birds takes flight — leaving behind the comfort of the known for the promise of the unknown. This image captures the tender, symbolic moment of departure at dawn, where home fades into memory, and the sky becomes a space of possibility. The birds represent courage and instinct — a quiet reminder that beginnings often require letting go. The soft morning hues evoke hope, while their silhouettes in motion echo the rhythms of growth, transformation, and the quiet bravery of starting again.</p>
+	</div>
+	</div>
+
+        <div class="artwork-card"><div class="artwork-image"><img src="../images/dep6.jpg" alt="Departure Artwork 6"></div><div class="artwork-info">
+		<h3>Horizons of Silence</h3>
+		<p>This contemplative landscape by Jehangir Sabavala captures a long, winding road that disappears into a softly rendered horizon. Executed in 1989 with impressionistic brushwork and gentle tonal transitions, the painting evokes a sense of quiet departure and introspection—an emotional journey outward as much as across space. Sabavala’s hallmark composition blends precise geometry with atmospheric depth, using muted earth tones to draw the eye toward an unseen destination beyond the canvas. Within the serene expanses and gentle curves lies an invitation: to embark on a path of solitude, reflection, and the unknowable future.</p>
+	</div>
+	</div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Pragya. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.artwork-nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({ top: targetElement.offsetTop - 100, behavior: 'smooth' });
+        }
+        document.querySelectorAll('.artwork-nav a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('h2[id]');
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= (sectionTop - 150)) {
+          current = section.getAttribute('id');
+        }
+      });
+      document.querySelectorAll('.artwork-nav a').forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === `#${current}`) {
+          a.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
