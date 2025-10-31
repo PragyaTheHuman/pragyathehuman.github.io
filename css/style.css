@@ -279,6 +279,30 @@ nav {
     margin-top: 3rem;
 }
 
+
+/* Override for research section only */
+#research .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
+@media screen and (max-width: 992px) {
+    #research .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    #research .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 /* Blog Section Specific Styles */
 .blogs .gallery {
     display: flex;
