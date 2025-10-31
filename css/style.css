@@ -112,6 +112,8 @@ a:hover {
     margin-right: 0.5rem;
 }
 
+
+
 /* Header & Navigation */
 header {
     position: fixed;
@@ -242,9 +244,12 @@ nav {
     background: white;
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     font-size: 0.9rem;
     font-weight: 500;
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.05),
+        0 0 0 2px rgba(108, 92, 231, 0.3),
+        0 0 15px rgba(108, 92, 231, 0.2);
 }
 
 .profile-image-container {
