@@ -375,6 +375,19 @@ nav {
     }
 }
 
+/* Blog Subheadings */
+
+.blog-subheading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-color);
+
+    margin-bottom: 0.8rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
 
 /* Blog Section Specific Styles */
 .blogs .gallery {
@@ -411,13 +424,47 @@ nav {
 }
 
 /* Research Section */
+
 .research-paper {
     background: white;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     padding: 3rem;
     width: 100%;
+    transition: all 0.3s ease;
 }
+
+.research-paper:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Research Paper Title */
+
+.research-paper h3 {
+    font-size: 1.45rem;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+    color: var(--accent-color);
+}
+
+/* Research Metadata */
+
+.research-meta {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #8b7cf0;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.2px;
+}
+
+/* Research Paragraph Styling */
+
+.research-paper p {
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
 
 /* Mobile App Section */
 .mobile-app-container {
@@ -468,6 +515,20 @@ nav {
     color: var(--accent-color);
     margin-right: 0.8rem;
     font-size: 1.1rem;
+}
+
+
+/* Art Section Subheadings */
+
+.art-subheading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-color);
+
+    margin-bottom: 0.9rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
 }
 
 /* Animation Grid */
