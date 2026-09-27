@@ -113,6 +113,11 @@ a:hover {
 }
 
 
+.art-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
 
 /* Header & Navigation */
 header {
@@ -353,16 +358,6 @@ nav {
 }
 
 
-/* Override for research section only */
-#research .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-}
-
-@media screen and (max-width: 992px) {
-    #research .gallery {
-        grid-template-columns: 1fr;
-    }
-}
 
 @media screen and (max-width: 768px) {
     .gallery {
